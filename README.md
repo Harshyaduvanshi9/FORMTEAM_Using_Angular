@@ -1,6 +1,43 @@
 # FORMTEAM
 
+FORMTEAM is an AngularJS application that allows users to view a list of mock users in card format with pagination (20 users per page). The application provides various functionalities such as searching by name, applying filters for domain, gender, and availability simultaneously, and creating a team by selecting users from unique domains.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+
+Project Deyloment Link:-https://sensational-flan-e9db0f.netlify.app/
+
+
+
+
+## Functionalities
+
+# 1. Search by Name
+Users can search for specific individuals by entering their names in the provided search input. The search is case-insensitive and updates the displayed user cards in real-time.
+
+# 2. Filters
+Three filters are available to refine the displayed user cards:
+
+Domain Filter: Users can filter by domain, selecting from a list of unique domains.
+Gender Filter: Users can filter by gender, choosing from options such as Male, Female, or Agender.
+Availability Filter: Users can filter by availability, choosing from options such as Available or Not Available.
+These filters can be used simultaneously to narrow down the displayed user cards based on specific criteria.
+
+# 3. Create a Team
+Users can create a team by selecting users from a unique domain. Only available users from the selected domain are added to the team. Once a user from a particular domain is added to the team, no other user from the same domain can be added to the team.
+
+# 4. Team Details
+After creating a team, users can view the details of the selected team members. The team details include the names of team members and the total number of team members.
+
+# 5. Pagination
+User cards are displayed with pagination, showing 20 users per page. Users can navigate through pages using the "Prev" and "Next" buttons.
+
+# Responsive Design
+FORMTEAM is designed to be responsive, ensuring a seamless user experience across various devices, including desktops, tablets, and mobile phones.
+
+## Tech Stack
+AngularJS
+
 
 ## Development server
 
