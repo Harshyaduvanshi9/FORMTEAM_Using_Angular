@@ -1,0 +1,44 @@
+.xyz {
+  background-color: rgb(211, 211, 211);
+}
+
+.custom-card-img-top {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.custom-card {
+  border: 1px solid #723f3f;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  background-color: rgb(253, 249, 167);
+  padding: 15px 15px;
+}
+
+.custom-card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.custom-button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  background-color: #5e82a8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-cd {
+  margin-top: 10px;
+}
+
+
+  
+
+  
+  

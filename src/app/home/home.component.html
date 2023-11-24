@@ -1,0 +1,100 @@
+<div class="xyz">
+
+  <div class="container">
+    <div class="custom-filters row justify-content-center">
+      <div class="col-md-3 mb-2 custom-filter custom-cd">
+        <input type="text" class="form-control" placeholder="Search by Full Name" (input)="searchByFullName($event)">
+      </div>
+      
+      <div class="col-md-3 mb-2 custom-filter custom-cd">
+        <select class="form-select" (change)="filterByDomain($event)">
+          <option value="">All Domains</option>
+          <option *ngFor="let domain of uniqueDomains" [value]="domain">{{ domain }}</option>
+        </select>
+      </div>
+      
+      <div class="col-md-3 mb-2 custom-filter custom-cd">
+        <select class="form-select" (change)="filterByGender($event)">
+          <option value="">All Genders</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Agender">Agender</option>
+        </select>
+      </div>
+      
+      <div class="col-md-3 mb-2 custom-filter custom-cd">
+        <select class="form-select" (change)="filterByAvailability($event)">
+          <option value="">All Availability</option>
+          <option value="true">Available</option>
+          <option value="false">Not Available</option>
+        </select>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+  
+     
+      <div class="col-md-8">
+        <div class="custom-card mb-4">
+          <div class="custom-card-header">
+            <h3 class="custom-card-title">Selected Team Members</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let member of selectedTeamMembers">{{ member.first_name }} {{ member.last_name }}</li>
+          </ul>
+          <div class="custom-card-body">
+            <p>Total Team Members: {{ selectedTeamMembers.length }}</p>
+            <div class="text-center">
+              <button class="btn btn-primary" (click)="formTeam()" [disabled]="selectedTeamMembers.length === 0" mat-raised-button color='warn'>
+                Form Team
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <div class="custom-card mt-4">
+          <div class="custom-card-header">
+            <h3 class="custom-card-title">Teams</h3>
+          </div>
+          <div class="custom-card-body">
+            <div *ngFor="let team of teams; let i = index" class="custom-card mb-3">
+              <div class="custom-card-header">
+                <h5 class="custom-card-title">Team {{ i + 1 }}</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let member of team">{{ member.first_name }} {{ member.last_name }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-4 mb-4" *ngFor="let card of getCurrentPageMembers()">
+            <div class="custom-card">
+              <img [src]="card.avatar" class="custom-card-img-top" alt="Avatar">
+              <div class="custom-card-body">
+                <h5 class="custom-card-title">{{ card.first_name }} {{ card.last_name }}</h5>
+                <p class="custom-card-text">Email: {{ card.email }}</p>
+                <p class="custom-card-text">Domain: {{ card.domain }}</p>
+                <p class="custom-card-text">Available: {{ card.available ? 'Yes' : 'No' }}</p>
+                <button class="btn btn-success" (click)="addToTeam(card)" [disabled]="isMemberAlreadyAdded(card)" mat-raised-button color='primary'>
+                  Add to Team
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-5 ">
+          <button class="btn btn-primary mx-2 " (click)="shiftMembers('backward')" [disabled]="startIdx === 0">Prev</button>
+          <button class="btn btn-primary mx-2" (click)="shiftMembers('forward')" [disabled]="(startIdx + membersPerPage) >= memberData.length">Next</button>
+        </div>
+        <br>
+        <br>
+  
+      </div>
+    </div>
+  </div>
+  </div>
+  
